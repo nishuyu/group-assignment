@@ -1,0 +1,34 @@
+# main.py
+
+from ratNum import ratNum
+
+def main():
+    print("Welcome to the Rational Number Calculator!")
+    
+    while True:
+        try:
+            # Input first rational number
+            a1 = int(input("Enter numerator for first rational number (a): "))
+            b1 = int(input("Enter denominator for first rational number (b): "))
+            r1 = ratNum(a1, b1)
+
+            # Input second rational number
+            a2 = int(input("Enter numerator for second rational number (a): "))
+            b2 = int(input("Enter denominator for second rational number (b): "))
+            r2 = ratNum(a2, b2)
+
+            # Perform subtraction
+            result = r1.subtract(r2)
+            print(f"Result of {r1} - {r2} = {result}")
+
+            # Ask if the user wants to continue
+            cont = input("Do you want to perform another operation? (yes/no): ").strip().lower()
+            if cont != 'yes':
+                break
+        except ValueError:
+            print("Invalid input. Please enter integers for the numerator and denominator.")
+
+    print("Thank you for using the Rational Number Calculator!")
+
+if __name__ == "__main__":
+    main()
