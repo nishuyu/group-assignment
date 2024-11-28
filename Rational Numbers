@@ -9,7 +9,7 @@ class ratNum:
         self.b = b
 
     def gcd(self, x, y):
-        while y
+        while y:
             x, y = y, x % y
         return x
 
@@ -18,7 +18,7 @@ class ratNum:
 
     def subtract(self, other):
         if type(other) is not ratNum:
-        return "Subtraction is only defined between ratNum instances."
+          return "Subtraction is only defined between ratNum instances."
         
         # Calculate LCM of the two denominators
         common_denominator = self.lcm(self.b, other.b)
