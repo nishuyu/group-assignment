@@ -59,7 +59,7 @@ while True:
                     print("Try again.")
                 else:
                     print("Too many failed attempts. Exiting.")
-                    
+                    exit（）
     elif ch == "2":
         st = input("User name = ")
         pas = getpass("Password: ")
