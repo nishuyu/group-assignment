@@ -52,15 +52,14 @@ while True:
         for attempt in range(3):
             if login(st):
                 print("Login successful!")
-                break
+                exit()
             else:
                 print("Incorrect username or password.")
                 if attempt < 2:
                     print("Try again.")
                 else:
                     print("Too many failed attempts. Exiting.")
-                    exit()
-    
+                    
     elif ch == "2":
         st = input("User name = ")
         pas = getpass("Password: ")
