@@ -43,6 +43,7 @@ def main():
               a2 = int(input("Enter numerator for second rational number (a): "))
               b2 = int(input("Enter denominator for second rational number (b): "))
               r2 = ratNum(a2, b2)
+
               #rational number to the power of another rational number. 
               g=r1.power_of_rational(r2)
               print(f"Result of {r1} to the power of{r2}={g}")
