@@ -1,20 +1,23 @@
 class ratNum:
     def __init__(self, a, b):
-        while b == 0:
+        while b == 0:         # Ensures the denominator is not zero
             print("Error: Denominator cannot be zero. Please enter a valid denominator.")
             b = int(input("Enter denominator for rational number (b): "))
-        self.a = a
-        self.b = b
+        self.a = a   # Numerator
+        self.b = b   # Denominator
 
     def gcd(self, x, y):
+      # Computes the greatest common divisor (GCD)
         while y:
             x, y = y, x % y
         return x
 
     def lcm(self, x, y):
+        # Computes the least common multiple (LCM)
         return abs(x * y) // self.gcd(x, y)
 
     def subtract(self, other):
+       # Ensures the other object is a ratNum instance
         if type(other) is not ratNum:
           return "Subtraction is only defined between ratNum instances."
         
@@ -31,9 +34,11 @@ class ratNum:
         return ratNum(result_a, common_denominator)
 
     def __str__(self):
+    # Returns a string representation of the rational number
         return f"{self.a}/{self.b}"
 
     def power(self,n):
+    # Error handling for zero base
         if self.a == 0:
             print("Error: Cannot raise zero to a power.")
             return None
@@ -54,6 +59,7 @@ class ratNum:
         
         
     def power_of_rational(self, exponent):
+    # Error handling for zero base
       if self.a == 0:
         print("Error: Cannot raise zero to a power.")
         return None
