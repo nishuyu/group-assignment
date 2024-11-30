@@ -1,0 +1,77 @@
+class ratNum:
+    def __init__(self, a, b):
+        while b == 0:
+            print("Error: Denominator cannot be zero. Please enter a valid denominator.")
+            b = int(input("Enter denominator for rational number (b): "))
+        self.a = a
+        self.b = b
+
+    def gcd(self, x, y):
+        while y:
+            x, y = y, x % y
+        return x
+
+    def lcm(self, x, y):
+        return abs(x * y) // self.gcd(x, y)
+
+    def subtract(self, other):
+        if type(other) is not ratNum:
+          return "Subtraction is only defined between ratNum instances."
+        
+        # Calculate LCM of the two denominators
+        common_denominator = self.lcm(self.b, other.b)   
+        
+        # Adjust numerators to the common denominator
+        new_a1 = self.a * (common_denominator // self.b)
+        new_a2 = other.a * (common_denominator // other.b)
+        
+        # Perform the subtraction
+        result_a = new_a1 - new_a2
+        
+        return ratNum(result_a, common_denominator)
+
+    def __str__(self):
+        return f"{self.a}/{self.b}"
+
+    def power(self,n):
+        if self.a == 0:
+            print("Error: Cannot raise zero to a power.")
+            return None
+
+        # Calculate the power 
+        if n >= 0: 
+            new_a = self.a ** n 
+            new_b = self.b ** n 
+        else: 
+            new_a = self.b ** abs(n) 
+            new_b = self.a ** abs(n) 
+            
+        # Simplify the result 
+        gcd = self.gcd(new_a, new_b) 
+        new_a //= gcd 
+        new_b //= gcd 
+        return ratNum(new_a, new_b)
+        
+        
+    def power_of_rational(self, exponent):
+      if self.a == 0:
+        print("Error: Cannot raise zero to a power.")
+        return None
+
+    # Convert exponent to a float
+      base_a = self.a / self.b
+      exp_a = exponent.a
+      exp_b = exponent.b
+
+    # Calculate the floating point result
+      result = (base_a ** exp_a) ** (1/exp_b)
+
+    # Since the result is a float, we can simplify it by turning it back into a ratNum
+    # You might want to implement better conversion of float to `ratNum`
+      result_num = float(result)
+      # Find numerator and denominator from the float approximation
+      denom = 10  # To create a ratio
+      numer = int(result_num * denom)
+
+      return ratNum(numer, denom)
+        
