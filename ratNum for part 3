@@ -66,8 +66,6 @@ class ratNum:
     # Calculate the floating point result
       result = (base_a ** exp_a) ** (1/exp_b)
 
-    # Since the result is a float, we can simplify it by turning it back into a ratNum
-    # You might want to implement better conversion of float to `ratNum`
       result_num = float(result)
       # Find numerator and denominator from the float approximation
       denom = 10  # To create a ratio
