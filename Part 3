@@ -1,10 +1,10 @@
 def main():
     print("Welcome to the Rational Number Calculator!")
     while (True):
-        print("1. Subtraction \n"
-              "2. Power \n "
+        print("1. Subtraction\n"
+              "2. Power\n "
               "3. Rational number to a power\n"
-             "4. Exit")
+              "4. Exit")
         Ch=input("Input your Choice:")
         if Ch=="1":
               # Input first rational number
@@ -20,6 +20,7 @@ def main():
               # Perform subtraction
               result = r1.subtract(r2)
               print(f"Result of {r1} - {r2} = {result}")
+              continue
               break;  
         elif Ch=="2":
               # Input rational number
@@ -32,6 +33,7 @@ def main():
               power_result = r1.power(p) 
               if power_result: 
                   print(f"Result of {r1} to the power of {p} = {power_result}")
+              continue
               break;
         elif Ch=="3":
               # Input first rational number
@@ -47,6 +49,7 @@ def main():
               #rational number to the power of another rational number. 
               g=r1.power_of_rational(r2)
               print(f"Result of {r1} to the power of{r2}={g}")
+              continue
               break;
         elif Ch=="4":
             print("Thank you for using the Rational Number Calculator!")
