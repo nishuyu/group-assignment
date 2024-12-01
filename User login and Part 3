@@ -36,6 +36,10 @@ def save_users(filename):
         for username, password in Users.items():
             f.write(f"{username}:{password}\n")
 
+# Importing necessary functions from ratNum and part3
+from ratNum import ratNum
+from part3 import main  # main() is the function you want to call
+
 # Main program
 load_users("users.txt")  # Load existing users
 
@@ -52,6 +56,7 @@ while True:
         for attempt in range(3):
             if login(st):
                 print("Login successful!")
+                main()
                 exit()
             else:
                 print("Incorrect username or password.")
