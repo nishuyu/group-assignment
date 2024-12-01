@@ -1,5 +1,5 @@
 class ratNum:
-    def __init__(self, a, b):
+    def __init__(self, a, b):  #Intializing the vzariables
         while b == 0:         # Ensures the denominator is not zero
             print("Error: Denominator cannot be zero. Please enter a valid denominator.")
             b = int(input("Enter denominator for rational number (b): "))
@@ -71,8 +71,8 @@ class ratNum:
 
     # Calculate the floating point result
       result = (base_a ** exp_a) ** (1/exp_b)
-
       result_num = float(result)
+
       # Find numerator and denominator from the float approximation
       denom = 10  # To create a ratio
       numer = int(result_num * denom)
