@@ -1,4 +1,6 @@
-from ratNum import ratNum
+#main.py
+
+from ratNum import ratNum  #Importing the class ratNum
 
 def main():   #Shows the user menu and processes user input
     print("Welcome to the Rational Number Calculator!")
