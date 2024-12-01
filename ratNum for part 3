@@ -38,8 +38,8 @@ class ratNum:
         return f"{self.a}/{self.b}"
 
     def power(self,n):
-    # Error handling for zero base
-        if self.a == 0:
+        #Raises the rational number to an integer power.
+        if self.a == 0:      # Error handling for zero base
             print("Error: Cannot raise zero to a power.")
             return None
 
@@ -59,8 +59,8 @@ class ratNum:
         
         
     def power_of_rational(self, exponent):
-    # Error handling for zero base
-      if self.a == 0:
+      #Raises the rational number to another rational number
+      if self.a == 0:        # Error handling for zero base
         print("Error: Cannot raise zero to a power.")
         return None
 
