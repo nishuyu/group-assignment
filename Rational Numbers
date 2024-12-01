@@ -1,7 +1,7 @@
 # ratNum.py
 
 class ratNum:
-    def __init__(self, a, b):
+    def __init__(self, a, b):  #Initializing the variables
         while b == 0:        # Ensures denominator is not zero
             print("Error: Denominator cannot be zero. Please enter a valid denominator.")
             b = int(input("Enter denominator for rational number (b): "))
