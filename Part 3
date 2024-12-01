@@ -1,12 +1,12 @@
-def main():
+def main():   #Shows the user menu and processes user input
     print("Welcome to the Rational Number Calculator!")
-    while (True):
+    while (True):    #Forever loop
         print("1. Subtraction\n"
               "2. Power\n "
               "3. Rational number to a power\n"
               "4. Exit")
-        Ch=input("Input your Choice:")
-        if Ch=="1":
+        Ch=input("Input your Choice:")  
+        if Ch=="1":  
               # Input first rational number
               a1 = int(input("Enter numerator for first rational number (a): "))
               b1 = int(input("Enter denominator for first rational number (b): "))
@@ -51,10 +51,10 @@ def main():
               print(f"Result of {r1} to the power of{r2}={g}")
               continue
               break;
-        elif Ch=="4":
+        elif Ch=="4":    #User chose to exit 
             print("Thank you for using the Rational Number Calculator!")
             break;
-        else:
+        else:                   #invalid input
             print("Wrong input,enter again")
             continue
             break;
