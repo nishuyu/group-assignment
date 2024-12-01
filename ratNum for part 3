@@ -1,3 +1,5 @@
+#ratNum.py
+
 class ratNum:
     def __init__(self, a, b):  #Intializing the vzariables
         while b == 0:         # Ensures the denominator is not zero
