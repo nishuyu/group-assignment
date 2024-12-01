@@ -56,8 +56,8 @@ def main():   #Shows the user menu and processes user input
             break;
         else:                   #invalid input
             print("Wrong input,enter again")
-            continue
+            continue   #Go back to showing the menu
             break;
 
 if __name__ == "__main__":
-    main()
+    main()   #call function to display user menu and process user input
