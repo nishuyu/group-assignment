@@ -1,3 +1,5 @@
+from ratNum for part3 import ratNum
+
 def main():   #Shows the user menu and processes user input
     print("Welcome to the Rational Number Calculator!")
     while (True):    #Forever loop
