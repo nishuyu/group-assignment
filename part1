@@ -1,11 +1,11 @@
 # main.py
 
-from ratNum import ratNum
+from ratNum import ratNum  #Importing the class ratNum
 
-def main():
+def main():   #Process user input 
     print("Welcome to the Rational Number Calculator!")
     
-    while True:
+    while True:     #Foerever Loop
         try:
             # Input first rational number
             a1 = int(input("Enter numerator for first rational number (a): "))
@@ -31,4 +31,4 @@ def main():
     print("Thank you for using the Rational Number Calculator!")
 
 if __name__ == "__main__":
-    main()
+    main()           #call function to display user menu and process user input
