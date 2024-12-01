@@ -1,0 +1,74 @@
+# User records using dictionary, name:password
+Users = {}
+
+# Add user, name = st
+def addUser(st, pas):
+    if st not in Users:
+        Users[st] = pas
+        print(st, "has been added")
+    else:
+        print(st, "could not be added; user already exists.")
+
+# Function to hide user input
+from getpass import getpass
+
+# Return True if login successful, name = st
+def login(st):
+    pa = getpass("Password: ")
+    if st in Users and pa == Users[st]:
+        return True
+    return False
+
+# Load users from a file
+def load_users(filename):
+    try:
+        with open(filename, 'r') as f:
+            for line in f:
+                if ':' in line:
+                    username, password = line.strip().split(':', 1)
+                    Users[username] = password
+    except FileNotFoundError:
+        print("User file not found. Starting with an empty user list.")
+
+# Save users to a file
+def save_users(filename):
+    with open(filename, 'w') as f:
+        for username, password in Users.items():
+            f.write(f"{username}:{password}\n")
+
+# Main program
+load_users("users.txt")  # Load existing users
+
+while True:
+    print("Welcome! Choose 1, 2, or 3 to quit\n"
+          "1. User login\n"
+          "2. Add user\n"
+          "3. Quit\n")
+    ch = input("Your choice = ").strip()
+    
+    if ch == "1":
+        st = input("User name = ")
+        # Allow up to 3 login attempts
+        for attempt in range(3):
+            if login(st):
+                print("Login successful!")
+                exit()
+            else:
+                print("Incorrect username or password.")
+                if attempt < 2:
+                    print("Try again.")
+                else:
+                    print("Too many failed attempts. Exiting.")
+                    exit()  # Corrected closing parenthesis
+    elif ch == "2":
+        st = input("User name = ")
+        pas = getpass("Password: ")
+        addUser(st, pas)
+    
+    elif ch == "3":
+        save_users("users.txt")  # Save users before quitting
+        print("Bye!")
+        break
+    
+    else:
+        print("Wrong input, please try again.")
